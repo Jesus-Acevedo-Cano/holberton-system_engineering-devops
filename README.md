@@ -1,2 +1,1 @@
-# holberton-system_engineering-devops
-Learning the shelll
+This repository contains all the task and requeriments to learn and practice the shell
