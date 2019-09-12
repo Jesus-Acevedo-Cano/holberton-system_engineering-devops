@@ -14,4 +14,8 @@ does not take any options. However, you can supply studentname.
 .SH BUGS
 No known bugs.
 .SH AUTHOR
+<<<<<<< HEAD
 Julien Barbier, Sylvain Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemeier, Julien Cyr, Alex Gautier and all the Holberton mentors
+=======
+Julien Barbier, Sylvain Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemeier, Julien Cyr, Alex Gautier and all the Holberton mentors
+>>>>>>> eeea59eed4276abe5d3e675b421feb4b26b9c0b2
