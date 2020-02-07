@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+# "bad luck" at 4th iteration, "good luck" at 8th
+
+NUM=1
+
+while [ $NUM -le 10 ]; do
+    if [ $NUM = 4 ]; then
+	echo "bad luck"
+    elif [ $NUM = 8 ]; then
+        echo "good luck"
+    else
+	echo "Holberton School"
+    fi
+    let NUM=$NUM+1
+done
