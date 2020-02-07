@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+# "bad luck" at iteration
+
+NUM=1
+
+while [ $NUM -le 20 ]; do
+    echo $NUM
+    case $NUM in
+	4)
+	    echo "bad luck from China";;
+	9)
+            echo "bad luck from Japan";;
+	17)
+            echo "bad luck from Italy";;
+    esac
+    let NUM=$NUM+1
+done
