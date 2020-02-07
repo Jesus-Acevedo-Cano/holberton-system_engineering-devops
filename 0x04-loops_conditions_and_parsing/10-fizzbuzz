@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script is displaying numbers from 1 to 100
+# "Fizz" for multiple of 3, "Buzz" multiple of 5, "FizzBuzz" for multiple of 3 and 5
+
+let NUM=1
+
+while [ $NUM -le 100 ]; do
+    if [[ $((NUM%3)) -eq 0  && $((NUM%5)) -eq 0 ]]; then
+	echo "FizzBuzz"
+    elif [[ $((NUM%3)) -eq 0 ]]; then
+        echo "Fizz"
+    elif [[ $((NUM%5)) -eq 0 ]]; then
+        echo "Buzz"
+    else
+	echo $NUM
+    fi
+    let NUM=$NUM+1
+done
