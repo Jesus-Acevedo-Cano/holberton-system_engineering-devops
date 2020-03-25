@@ -4,7 +4,7 @@ package { 'nginx':
   name    => 'nginx',
 }
 
-file { 'index.html':
+file { '/var/www/html/index.html':
   path    => '/var/www/html/index.html',
   content => 'Holberton School',
 }
