@@ -9,11 +9,11 @@ file { 'index.html':
   content => 'Holberton School',
 }
 
-file_line { 'redirect_me':
+file_line { 'redirect':
   ensure   => present,
   path     => '/etc/nginx/sites-available/default',
   after    => 'server_name _;',
-  line     => 'rewrite ^/redirect_me return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;',
+  line     => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
   multiple => true,
 }
 
