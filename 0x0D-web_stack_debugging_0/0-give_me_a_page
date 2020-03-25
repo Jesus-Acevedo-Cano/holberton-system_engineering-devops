@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# command use to handle error 'curl: (52) Empty reply from server'
+sudo service apache2 restart
