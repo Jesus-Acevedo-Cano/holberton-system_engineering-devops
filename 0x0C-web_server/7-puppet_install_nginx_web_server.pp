@@ -1,11 +1,16 @@
 # configuring your server with Puppet
 package { 'nginx':
-  ensure  => installed,
-  name    => 'nginx',
+  ensure => installed,
+  require => Package['nginx'],
 }
 
 file { '/var/www/html/index.html':
   path    => '/var/www/html/index.html',
+  content => 'Holberton School',
+}
+
+file { '/usr/share/nginx/html/index.html':
+  path    => '/usr/share/nginx/html/index.html'
   content => 'Holberton School',
 }
 
@@ -20,9 +25,4 @@ file { '/etc/nginx/sites-available/default':
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
   }',
-}
-
-service { 'nginx':
-  ensure  => running,
-  require => Package['nginx'],
 }
