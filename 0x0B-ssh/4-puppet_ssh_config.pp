@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # using Puppet to make changes to our configuration file
 file_line {'add identity file':
   path  => '/etc/ssh/ssh_config',
