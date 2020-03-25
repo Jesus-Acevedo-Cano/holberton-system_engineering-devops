@@ -4,17 +4,22 @@ package { 'nginx':
   name    => 'nginx',
 }
 
-file { '/var/www/html/index.html':
+file { 'index.html':
   path    => '/var/www/html/index.html',
   content => 'Holberton School',
 }
 
-file_line { 'redirect':
-  ensure   => present,
-  path     => '/etc/nginx/sites-available/default',
-  after    => 'server_name _;',
-  line     => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
-  multiple => true,
+file { '/etc/nginx/sites-available/default':
+  path  => '/etc/nginx/sites-available/default',
+  content => 'server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+  }',
 }
 
 service { 'nginx':
