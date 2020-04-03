@@ -1,13 +1,12 @@
 # configuring your nginx server with Puppet
 
-package { 'nginx':
-  ensure => installed,
-  name   => 'nginx',
+exec { 'update':
+  command => '/usr/bin/apt-get -y update',
 }
 
-file { '/var/www/html/index.html':
-  content => 'Holberton School',
-  path    => '/var/www/html/index.html'
+package { 'nginx':
+  ensure  => installed,
+  require => Exec['update']
 }
 
 file_line { 'title':
@@ -23,6 +22,12 @@ file_line { 'header':
   path   => '/etc/nginx/sites-available/default',
   after  => 'server_name _;',
   line   => 'add_header X-Served-By "$HOSTNAME";',
+  require => Package['nginx'],
+}
+
+file { '/var/www/html/index.html':
+  content => 'Holberton School',
+  path    => '/var/www/html/index.html'
 }
 
 service { 'nginx':
