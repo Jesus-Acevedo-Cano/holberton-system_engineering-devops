@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Failed to connect to 0 port 80 Fixed
+service nginx start
+sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx restart
