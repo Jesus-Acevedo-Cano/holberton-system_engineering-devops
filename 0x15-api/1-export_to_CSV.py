@@ -16,8 +16,8 @@ if __name__ == "__main__":
         write = csv.writer(f, quoting=csv.QUOTE_ALL)
         list_todo = [
             [argv[1],
-            user["username"],
-            task.get("completed"),
-            task.get("title")] for task in todos
+             user["username"],
+             task.get("completed"),
+             task.get("title")] for task in todos
         ]
         write.writerows(list_todo)
