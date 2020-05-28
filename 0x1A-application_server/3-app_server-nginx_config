@@ -13,9 +13,8 @@ server {
     location = /airbnb-onepage/ {
         proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
     }
-    location /airbnb-dynamic/number_odd_or_even/ {
-        rewrite /airbnb-dynamic/(.*) /$1 break;
-        proxy_pass http://0.0.0.0:5001/number_odd_or_even;
+    location /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+        proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
     }
     add_header X-Served-By gc-1221-web-01-1585018896;
     location /hbnb_static {
